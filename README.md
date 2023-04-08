@@ -11,5 +11,5 @@ aws.profile=xxx-devuser
 network=test
 ```
 
-- Run `./docker-compose-aws-runner.sh`
+- Run `./docker-compose-aws-runner.sh` from inside the directory with `docker-compose.yaml`
 

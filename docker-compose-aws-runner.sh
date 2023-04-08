@@ -60,7 +60,7 @@ config_read_file() {
 }
 
 config_get() {
-    val="$(config_read_file $SCRIPT_DIR/docker-compose-aws-runner.cfg "${1}")";
+    val="$(config_read_file docker-compose-aws-runner.cfg "${1}")";
     printf -- "%s" "${val}";
 }
 
