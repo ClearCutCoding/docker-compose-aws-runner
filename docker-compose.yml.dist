@@ -1,0 +1,12 @@
+version: "3"
+services:
+  # Core services
+  proxy:
+    image: xxx.dkr.ecr.eu-west-1.amazonaws.com/dev-package-proxy:latest
+    container_name: test-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: unless-stopped
