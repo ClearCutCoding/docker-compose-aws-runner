@@ -118,7 +118,7 @@ check_aws_cli() {
     local LOGIN_URL=https://${VAR_ACCOUNT}.dkr.ecr.${VAR_REGION}.amazonaws.com
 
 
-    local PASS=$(${CMD_AWS} ecr get-login-password --region eu-west-1 --profile ${VAR_PROFILE})
+    local PASS=$(${CMD_AWS} ecr get-login-password --region ${VAR_REGION} --profile ${VAR_PROFILE})
     docker login -u AWS -p ${PASS} ${LOGIN_URL}
 
     if [[ $? != 0 ]]; then

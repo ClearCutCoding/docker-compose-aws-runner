@@ -6,7 +6,7 @@
 
 
 ```
-aws.account=https://1234
+aws.account=1234
 aws.region=eu-west-1
 aws.profile=xxx-devuser
 network=test
