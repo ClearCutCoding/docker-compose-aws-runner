@@ -67,6 +67,7 @@ config_get() {
 VAR_NETWORK=$(config_get network)
 VAR_PROFILE=$(config_get aws.profile)
 VAR_ACCOUNT=$(config_get aws.account)
+VAR_REGION=$(config_get aws.region)
 
 ####
 
@@ -114,8 +115,11 @@ check_aws_cli() {
     fi
 
     # aws cli v2
-    PASS=$(${CMD_AWS} ecr get-login-password --region eu-west-1 --profile ${VAR_PROFILE})
-    docker login -u AWS -p ${PASS} ${VAR_ACCOUNT}
+    local LOGIN_URL=https://${VAR_ACCOUNT}.dkr.ecr.${VAR_REGION}.amazonaws.com
+
+
+    local PASS=$(${CMD_AWS} ecr get-login-password --region eu-west-1 --profile ${VAR_PROFILE})
+    docker login -u AWS -p ${PASS} ${LOGIN_URL}
 
     if [[ $? != 0 ]]; then
         echo 'Something went wrong when logging in to ${VAR_PROFILE} profile.'
