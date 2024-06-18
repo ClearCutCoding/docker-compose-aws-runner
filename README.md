@@ -1,5 +1,14 @@
 # Docker Compose AWS Runner
 
+## Installation
+
+```
+brew tap ClearCutCoding/homebrew-tap
+brew install docker-compose-aws-runner
+```
+
+## Usage
+
 - Ensure the `aws` cli is installed and configured
 - Ensure `docker-compose` cli is installed
 - Create config in same folder as `docker-compose.yaml` named `docker-compose-aws-runner.cfg`
