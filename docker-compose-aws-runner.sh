@@ -25,7 +25,7 @@ OS=$(uname)
 SCRIPT_DIR=$( dirname -- "$0"; )
 
 CMD_AWS="aws"
-CMD_COMPOSE="docker-compose"
+CMD_COMPOSE="docker compose"
 
 ARG_PULL="yes"
 ARG_COMMAND=
